@@ -47,8 +47,12 @@
 
 - (void)buildPipeline
 {
-  id<MTLLibrary> library = [device newDefaultLibrary];
-    
+    id<MTLLibrary> library = [device newDefaultLibrary];
+    if (!library)
+    {
+      NSLog(@"Error occurred when creating default library");
+    }
+
     id<MTLFunction> vertexFunc = [library newFunctionWithName:@"vertex_main"];
     id<MTLFunction> fragmentFunc = [library newFunctionWithName:@"fragment_main"];
 
@@ -58,12 +62,11 @@
     pipelineDescriptor.fragmentFunction = fragmentFunc;
     
     NSError *error = nil;
-    pipeline = [device newRenderPipelineStateWithDescriptor:pipelineDescriptor
-                                                                error:&error];
-    
+    pipeline = [device newRenderPipelineStateWithDescriptor:pipelineDescriptor error:&error];
+
     if (!pipeline)
     {
-        NSLog(@"Error occurred when creating render pipeline state: %@", error);
+      NSLog(@"Error occurred when creating render pipeline state: %@", error);
     }
     
   commandQueue = [device newCommandQueue];
