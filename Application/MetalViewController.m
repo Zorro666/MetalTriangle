@@ -2,10 +2,17 @@
 #import "MetalView.h"
 #import <Metal/MTLDevice.h>
 
+typedef struct
+{
+  MetalView* view;
+  bool quit;
+} ViewData;
+
 @implementation MetalViewController
 {
   CVDisplayLinkRef _displayLink;
   NSTimer* _timer;
+  ViewData viewData;
 }
 
 - (void)viewDidLoad
@@ -13,6 +20,8 @@
   [super viewDidLoad];
   
   MetalView* metalView = (MetalView*)self.view;
+  viewData.quit = false;
+  viewData.view = metalView;
 
   [metalView loaded];
   
@@ -23,33 +32,36 @@
                                            repeats: YES];
 
   CVDisplayLinkCreateWithActiveCGDisplays(&_displayLink);
-  CVDisplayLinkSetOutputCallback(_displayLink, &DisplayLinkCallback, (__bridge void * _Nullable)(self.view));
+  CVDisplayLinkSetOutputCallback(_displayLink, &DisplayLinkCallback, (void *)(&self->viewData));
   CVDisplayLinkStart(_displayLink);
 
 }
 
+-(void)viewWillDisappear
+{
+  self->viewData.quit = true;
+  [super viewWillDisappear];
+}
+
 -(void)onTick:(NSTimer*)timer
 {
-/*
- if (quit) {
+ if (self->viewData.quit) {
         [[[self view] window] close];
     }
- */
 }
 
 static CVReturn DisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTimeStamp* now,
                                     const CVTimeStamp* outputTime,
                                     CVOptionFlags flagsIn, CVOptionFlags* flagsOut, void* target) {
-  MetalView* view = (__bridge MetalView*)target;
+  ViewData *viewData = (ViewData*)target;
+  MetalView* view = viewData->view;
   [view draw];
-/*
- if (demo->quit) {
-        CVDisplayLinkStop(displayLink);
-        CVDisplayLinkRelease(displayLink);
-    }
- */
-    return kCVReturnSuccess;
+  if (viewData->quit)
+  {
+    CVDisplayLinkStop(displayLink);
+    CVDisplayLinkRelease(displayLink);
+  }
+  return kCVReturnSuccess;
 }
-
 
 @end

@@ -4,5 +4,6 @@
 
 - (void)loaded;
 - (void)draw;
+-(void)copyFrameBuffer:(id<MTLTexture>)framebuffer;
 
 @end

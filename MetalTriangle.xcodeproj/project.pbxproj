@@ -12,7 +12,7 @@
 		3A58E28F222F7F1400072892 /* MetalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A58E289222F7D9900072892 /* MetalViewController.m */; };
 		3A58E292222F7F1700072892 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A58E287222F7D9900072892 /* main.m */; };
 		3A58E29B222F7F4000072892 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A58E278222F7D9900072892 /* Main.storyboard */; };
-		83E9F9A021ED16D900B393C1 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E9F99E21ED16D900B393C1 /* Metal.framework */; };
+		83E9F9A021ED16D900B393C1 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E9F99E21ED16D900B393C1 /* Metal.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,7 +114,7 @@
 		83E9F97E21ED168D00B393C1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1300;
 				ORGANIZATIONNAME = Apple;
 				TargetAttributes = {
 					83E9F98521ED168D00B393C1 = {
@@ -218,6 +218,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEPLOYMENT_LOCATION = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -278,6 +279,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEPLOYMENT_LOCATION = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -298,9 +300,12 @@
 		83E9F99B21ED168F00B393C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
+				CURRENT_PROJECT_VERSION = 1.0;
+				DEVELOPMENT_TEAM = MNHBTWM7RN;
 				ENABLE_HARDENED_RUNTIME = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -320,9 +325,12 @@
 		83E9F99C21ED168F00B393C1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
+				CURRENT_PROJECT_VERSION = 1.0;
+				DEVELOPMENT_TEAM = MNHBTWM7RN;
 				ENABLE_HARDENED_RUNTIME = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = TARGET_MACOS;
 				INFOPLIST_FILE = "$(SRCROOT)/Application/macOS/Info.plist";
