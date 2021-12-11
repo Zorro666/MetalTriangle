@@ -78,26 +78,6 @@ fragment float4 fragment_main(constant Debug_UBO& debug_UBO [[buffer(0)]],\n\
 }\n\
 ";
 
-typedef struct id_NSObject
-{
-  void *m_Ptr;
-} id_NSObject;
-
-void Construct(id_NSObject* _this, void *i)
-{
-  _this->m_Ptr = i;
-}
-
-void ConstructDrawable(id_NSObject* _this, id<CAMetalDrawable> i)
-{
-  _this->m_Ptr = (void *)(i);
-}
-
-id<NSObject> GetId(id_NSObject* _this)
-{
-  return (__bridge id<NSObject>)(_this->m_Ptr);
-}
-
 @implementation MetalView
 {
   id<MTLDevice> device;
@@ -171,7 +151,6 @@ id<NSObject> GetId(id_NSObject* _this)
   metalLayer = (CAMetalLayer *)[self layer];
   metalLayer.device = device;
   metalLayer.pixelFormat = MTLPixelFormatBGRA8Unorm;
-  //metalLayer.allowsNextDrawableTimeout = NO;
   metalLayer.framebufferOnly = YES;
 }
 
@@ -240,7 +219,7 @@ id<NSObject> GetId(id_NSObject* _this)
   }
 
   id<MTLFunction> debugFragmentFunc = [debugLibrary newFunctionWithName:@"fragment_main"];
-  if (!debugVertexFunc)
+  if (!debugFragmentFunc)
   {
     NSLog(@"Error finding shader function 'fragment_main'\n");
   }
@@ -304,7 +283,6 @@ id<NSObject> GetId(id_NSObject* _this)
   id<MTLTexture> framebufferTexture = drawable.texture;
   MTLRenderPassDescriptor *renderPass1 = [MTLRenderPassDescriptor renderPassDescriptor];
   renderPass1.colorAttachments[0].texture = fb1;
-  //renderPass1.colorAttachments[0].texture = framebufferTexture;
   renderPass1.colorAttachments[0].clearColor = MTLClearColorMake(1.0, 1.0, 1.0, 1);
   renderPass1.colorAttachments[0].storeAction = MTLStoreActionStore;
   renderPass1.colorAttachments[0].loadAction = MTLLoadActionClear;
@@ -349,17 +327,11 @@ id<NSObject> GetId(id_NSObject* _this)
   [commandEncoder endEncoding];
 
   [commandBuffer2 presentDrawable:drawable];
-  NSLog(@"Present After %lu", (unsigned long)[drawable retainCount]);
-  NSLog(@"Texture After %lu", (unsigned long)[drawable.texture retainCount]);
   static float jake = 0.0f;
   jake += 0.01f;
   jake = (jake > 1.0f) ? 0.0f : jake;
   debug_UBO->darkCol = simd_make_float4(jake, 0.0f, 0.0f, 1.0f);
   [commandBuffer2 commit];
-  //if (framebufferTexture.usage == MTLTextureUsageUnknown)
-  {
-    //[self copyFrameBuffer:framebufferTexture];
-  }
 }
 
 -(void)copyFrameBuffer:(id<MTLTexture>)framebuffer

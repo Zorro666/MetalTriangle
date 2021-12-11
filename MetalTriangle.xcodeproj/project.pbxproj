@@ -7,7 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		239AF18427648CEB00287778 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E9F99E21ED16D900B393C1 /* Metal.framework */; };
 		23B3702D26A17660009AC149 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 23B3702C26A17660009AC149 /* Shaders.metal */; };
+		23C9830F2761E72A00D5E0E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23C9830D2761E72A00D5E0E0 /* Main.storyboard */; };
+		23C983112761E72A00D5E0E0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C983102761E72A00D5E0E0 /* main.m */; };
+		23C983172761E88800D5E0E0 /* MetalCPPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C983162761E88800D5E0E0 /* MetalCPPViewController.m */; };
+		23C9831A2761E8CA00D5E0E0 /* MetalCPPView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 23C983192761E8CA00D5E0E0 /* MetalCPPView.mm */; };
+		23C9831C2761EA9100D5E0E0 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 23C9831B2761EA9100D5E0E0 /* Shaders.metal */; };
+		23C98330276464A000D5E0E0 /* MetalDraw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23C9832F276464A000D5E0E0 /* MetalDraw.cpp */; };
+		23C9833F2764656400D5E0E0 /* MetalCPP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23C9833C2764656400D5E0E0 /* MetalCPP.cpp */; };
 		3A58E28C222F7ECD00072892 /* MetalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A58E28B222F7ECD00072892 /* MetalView.m */; };
 		3A58E28F222F7F1400072892 /* MetalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A58E289222F7D9900072892 /* MetalViewController.m */; };
 		3A58E292222F7F1700072892 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A58E287222F7D9900072892 /* main.m */; };
@@ -18,6 +26,21 @@
 /* Begin PBXFileReference section */
 		23B3702B26A168F8009AC149 /* MetalView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MetalView.h; sourceTree = "<group>"; };
 		23B3702C26A17660009AC149 /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		23C983032761E72A00D5E0E0 /* MetalTriangleCPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalTriangleCPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		23C983082761E72A00D5E0E0 /* MetalCPPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MetalCPPViewController.h; sourceTree = "<group>"; };
+		23C9830E2761E72A00D5E0E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		23C983102761E72A00D5E0E0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		23C983122761E72A00D5E0E0 /* MetalTriangleCPP.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MetalTriangleCPP.entitlements; sourceTree = "<group>"; };
+		23C983162761E88800D5E0E0 /* MetalCPPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetalCPPViewController.m; sourceTree = "<group>"; };
+		23C983182761E8CA00D5E0E0 /* MetalCPPView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetalCPPView.h; sourceTree = "<group>"; };
+		23C983192761E8CA00D5E0E0 /* MetalCPPView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MetalCPPView.mm; sourceTree = "<group>"; };
+		23C9831B2761EA9100D5E0E0 /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		23C9831D2761EB9200D5E0E0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23C983202763C3EA00D5E0E0 /* MetalDraw.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MetalDraw.h; sourceTree = "<group>"; };
+		23C9832F276464A000D5E0E0 /* MetalDraw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MetalDraw.cpp; sourceTree = "<group>"; };
+		23C9833C2764656400D5E0E0 /* MetalCPP.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MetalCPP.cpp; path = official/metal/MetalCPP.cpp; sourceTree = "<group>"; };
+		23C9833D2764656400D5E0E0 /* MetalCPP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MetalCPP.h; path = official/metal/MetalCPP.h; sourceTree = "<group>"; };
+		23C9833E2764656400D5E0E0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = official/metal/README.md; sourceTree = "<group>"; };
 		3A58E279222F7D9900072892 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3A58E27A222F7D9900072892 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A58E27C222F7D9900072892 /* MetalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MetalViewController.h; sourceTree = "<group>"; };
@@ -29,6 +52,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		23C983002761E72A00D5E0E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				239AF18427648CEB00287778 /* Metal.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		83E9F98321ED168D00B393C1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -40,6 +71,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23C983042761E72A00D5E0E0 /* MetalTriangleCPP */ = {
+			isa = PBXGroup;
+			children = (
+				23C98333276464F400D5E0E0 /* official */,
+				23C9832F276464A000D5E0E0 /* MetalDraw.cpp */,
+				23C9831D2761EB9200D5E0E0 /* Info.plist */,
+				23C9831B2761EA9100D5E0E0 /* Shaders.metal */,
+				23C983182761E8CA00D5E0E0 /* MetalCPPView.h */,
+				23C983192761E8CA00D5E0E0 /* MetalCPPView.mm */,
+				23C983082761E72A00D5E0E0 /* MetalCPPViewController.h */,
+				23C983162761E88800D5E0E0 /* MetalCPPViewController.m */,
+				23C983102761E72A00D5E0E0 /* main.m */,
+				23C9830D2761E72A00D5E0E0 /* Main.storyboard */,
+				23C983122761E72A00D5E0E0 /* MetalTriangleCPP.entitlements */,
+				23C983202763C3EA00D5E0E0 /* MetalDraw.h */,
+			);
+			path = MetalTriangleCPP;
+			sourceTree = "<group>";
+		};
+		23C98333276464F400D5E0E0 /* official */ = {
+			isa = PBXGroup;
+			children = (
+				23C9833B2764655900D5E0E0 /* metal */,
+			);
+			name = official;
+			sourceTree = "<group>";
+		};
+		23C9833B2764655900D5E0E0 /* metal */ = {
+			isa = PBXGroup;
+			children = (
+				23C9833C2764656400D5E0E0 /* MetalCPP.cpp */,
+				23C9833D2764656400D5E0E0 /* MetalCPP.h */,
+				23C9833E2764656400D5E0E0 /* README.md */,
+			);
+			name = metal;
+			sourceTree = "<group>";
+		};
 		3A58E276222F7D9900072892 /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				3A58E276222F7D9900072892 /* Application */,
+				23C983042761E72A00D5E0E0 /* MetalTriangleCPP */,
 				83E9F98721ED168D00B393C1 /* Products */,
 				83E9F99D21ED16D800B393C1 /* Frameworks */,
 			);
@@ -76,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				83E9F98621ED168D00B393C1 /* MetalTriangle.app */,
+				23C983032761E72A00D5E0E0 /* MetalTriangleCPP.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -91,6 +161,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		23C983022761E72A00D5E0E0 /* MetalTriangleCPP */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 23C983132761E72A00D5E0E0 /* Build configuration list for PBXNativeTarget "MetalTriangleCPP" */;
+			buildPhases = (
+				23C982FF2761E72A00D5E0E0 /* Sources */,
+				23C983002761E72A00D5E0E0 /* Frameworks */,
+				23C983012761E72A00D5E0E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MetalTriangleCPP;
+			productName = MetalTriangleCPP;
+			productReference = 23C983032761E72A00D5E0E0 /* MetalTriangleCPP.app */;
+			productType = "com.apple.product-type.application";
+		};
 		83E9F98521ED168D00B393C1 /* MetalTriangle */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 83E9F99A21ED168F00B393C1 /* Build configuration list for PBXNativeTarget "MetalTriangle" */;
@@ -114,9 +201,13 @@
 		83E9F97E21ED168D00B393C1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1300;
+				DefaultBuildSystemTypeForWorkspace = Latest;
+				LastUpgradeCheck = 1310;
 				ORGANIZATIONNAME = Apple;
 				TargetAttributes = {
+					23C983022761E72A00D5E0E0 = {
+						CreatedOnToolsVersion = 13.1;
+					};
 					83E9F98521ED168D00B393C1 = {
 						CreatedOnToolsVersion = 10.1;
 						SystemCapabilities = {
@@ -141,11 +232,20 @@
 			projectRoot = "";
 			targets = (
 				83E9F98521ED168D00B393C1 /* MetalTriangle */,
+				23C983022761E72A00D5E0E0 /* MetalTriangleCPP */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		23C983012761E72A00D5E0E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23C9830F2761E72A00D5E0E0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		83E9F98421ED168D00B393C1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -157,6 +257,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		23C982FF2761E72A00D5E0E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23C9831C2761EA9100D5E0E0 /* Shaders.metal in Sources */,
+				23C983172761E88800D5E0E0 /* MetalCPPViewController.m in Sources */,
+				23C983112761E72A00D5E0E0 /* main.m in Sources */,
+				23C9831A2761E8CA00D5E0E0 /* MetalCPPView.mm in Sources */,
+				23C98330276464A000D5E0E0 /* MetalDraw.cpp in Sources */,
+				23C9833F2764656400D5E0E0 /* MetalCPP.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		83E9F98221ED168D00B393C1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -171,6 +284,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		23C9830D2761E72A00D5E0E0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				23C9830E2761E72A00D5E0E0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		3A58E278222F7D9900072892 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -182,6 +303,64 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		23C983142761E72A00D5E0E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1.0;
+				DEVELOPMENT_TEAM = MNHBTWM7RN;
+				ENABLE_HARDENED_RUNTIME = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					TARGET_MACOS,
+				);
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = MetalTriangleCPP/Info.plist;
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jake.MetalTriangleCPP;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+			};
+			name = Debug;
+		};
+		23C983152761E72A00D5E0E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1.0;
+				DEVELOPMENT_TEAM = MNHBTWM7RN;
+				ENABLE_HARDENED_RUNTIME = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = TARGET_MACOS;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = MetalTriangleCPP/Info.plist;
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jake.MetalTriangleCPP;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+			};
+			name = Release;
+		};
 		83E9F99821ED168F00B393C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -300,6 +479,7 @@
 		83E9F99B21ED168F00B393C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -312,10 +492,12 @@
 					TARGET_MACOS,
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Application/macOS/Info.plist";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jake.metaltriangle;
 				PRODUCT_NAME = MetalTriangle;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -325,6 +507,7 @@
 		83E9F99C21ED168F00B393C1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -334,10 +517,12 @@
 				ENABLE_HARDENED_RUNTIME = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = TARGET_MACOS;
 				INFOPLIST_FILE = "$(SRCROOT)/Application/macOS/Info.plist";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jake.metaltriangle;
 				PRODUCT_NAME = MetalTriangle;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -347,6 +532,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		23C983132761E72A00D5E0E0 /* Build configuration list for PBXNativeTarget "MetalTriangleCPP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23C983142761E72A00D5E0E0 /* Debug */,
+				23C983152761E72A00D5E0E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		83E9F98121ED168D00B393C1 /* Build configuration list for PBXProject "MetalTriangle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
