@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2392F1162765F57E009AA012 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2392F1132765F57E009AA012 /* README.md */; };
+		2392F1172765F57E009AA012 /* metal-cpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2392F1142765F57E009AA012 /* metal-cpp.cpp */; };
 		239AF18427648CEB00287778 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E9F99E21ED16D900B393C1 /* Metal.framework */; };
 		23B3702D26A17660009AC149 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 23B3702C26A17660009AC149 /* Shaders.metal */; };
 		23C9830F2761E72A00D5E0E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23C9830D2761E72A00D5E0E0 /* Main.storyboard */; };
@@ -15,7 +17,6 @@
 		23C9831A2761E8CA00D5E0E0 /* MetalCPPView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 23C983192761E8CA00D5E0E0 /* MetalCPPView.mm */; };
 		23C9831C2761EA9100D5E0E0 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 23C9831B2761EA9100D5E0E0 /* Shaders.metal */; };
 		23C98330276464A000D5E0E0 /* MetalDraw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23C9832F276464A000D5E0E0 /* MetalDraw.cpp */; };
-		23C9833F2764656400D5E0E0 /* MetalCPP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23C9833C2764656400D5E0E0 /* MetalCPP.cpp */; };
 		3A58E28C222F7ECD00072892 /* MetalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A58E28B222F7ECD00072892 /* MetalView.m */; };
 		3A58E28F222F7F1400072892 /* MetalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A58E289222F7D9900072892 /* MetalViewController.m */; };
 		3A58E292222F7F1700072892 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A58E287222F7D9900072892 /* main.m */; };
@@ -24,6 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2392F1132765F57E009AA012 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = MetalTriangleCPP/metal/official/README.md; sourceTree = SOURCE_ROOT; };
+		2392F1142765F57E009AA012 /* metal-cpp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "metal-cpp.cpp"; path = "MetalTriangleCPP/metal/official/metal-cpp.cpp"; sourceTree = SOURCE_ROOT; };
+		2392F1152765F57E009AA012 /* metal-cpp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "metal-cpp.h"; path = "MetalTriangleCPP/metal/official/metal-cpp.h"; sourceTree = SOURCE_ROOT; };
 		23B3702B26A168F8009AC149 /* MetalView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MetalView.h; sourceTree = "<group>"; };
 		23B3702C26A17660009AC149 /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 		23C983032761E72A00D5E0E0 /* MetalTriangleCPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalTriangleCPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,9 +42,6 @@
 		23C9831D2761EB9200D5E0E0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23C983202763C3EA00D5E0E0 /* MetalDraw.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MetalDraw.h; sourceTree = "<group>"; };
 		23C9832F276464A000D5E0E0 /* MetalDraw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MetalDraw.cpp; sourceTree = "<group>"; };
-		23C9833C2764656400D5E0E0 /* MetalCPP.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MetalCPP.cpp; path = official/metal/MetalCPP.cpp; sourceTree = "<group>"; };
-		23C9833D2764656400D5E0E0 /* MetalCPP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MetalCPP.h; path = official/metal/MetalCPP.h; sourceTree = "<group>"; };
-		23C9833E2764656400D5E0E0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = official/metal/README.md; sourceTree = "<group>"; };
 		3A58E279222F7D9900072892 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3A58E27A222F7D9900072892 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A58E27C222F7D9900072892 /* MetalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MetalViewController.h; sourceTree = "<group>"; };
@@ -71,10 +72,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2392F1112765F56C009AA012 /* metal */ = {
+			isa = PBXGroup;
+			children = (
+				2392F1122765F571009AA012 /* official */,
+			);
+			name = metal;
+			sourceTree = "<group>";
+		};
+		2392F1122765F571009AA012 /* official */ = {
+			isa = PBXGroup;
+			children = (
+				2392F1142765F57E009AA012 /* metal-cpp.cpp */,
+				2392F1152765F57E009AA012 /* metal-cpp.h */,
+				2392F1132765F57E009AA012 /* README.md */,
+			);
+			path = official;
+			sourceTree = "<group>";
+		};
 		23C983042761E72A00D5E0E0 /* MetalTriangleCPP */ = {
 			isa = PBXGroup;
 			children = (
-				23C98333276464F400D5E0E0 /* official */,
+				2392F1112765F56C009AA012 /* metal */,
 				23C9832F276464A000D5E0E0 /* MetalDraw.cpp */,
 				23C9831D2761EB9200D5E0E0 /* Info.plist */,
 				23C9831B2761EA9100D5E0E0 /* Shaders.metal */,
@@ -88,24 +107,6 @@
 				23C983202763C3EA00D5E0E0 /* MetalDraw.h */,
 			);
 			path = MetalTriangleCPP;
-			sourceTree = "<group>";
-		};
-		23C98333276464F400D5E0E0 /* official */ = {
-			isa = PBXGroup;
-			children = (
-				23C9833B2764655900D5E0E0 /* metal */,
-			);
-			name = official;
-			sourceTree = "<group>";
-		};
-		23C9833B2764655900D5E0E0 /* metal */ = {
-			isa = PBXGroup;
-			children = (
-				23C9833C2764656400D5E0E0 /* MetalCPP.cpp */,
-				23C9833D2764656400D5E0E0 /* MetalCPP.h */,
-				23C9833E2764656400D5E0E0 /* README.md */,
-			);
-			name = metal;
 			sourceTree = "<group>";
 		};
 		3A58E276222F7D9900072892 /* Application */ = {
@@ -242,6 +243,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2392F1162765F57E009AA012 /* README.md in Resources */,
 				23C9830F2761E72A00D5E0E0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,7 +268,7 @@
 				23C983112761E72A00D5E0E0 /* main.m in Sources */,
 				23C9831A2761E8CA00D5E0E0 /* MetalCPPView.mm in Sources */,
 				23C98330276464A000D5E0E0 /* MetalDraw.cpp in Sources */,
-				23C9833F2764656400D5E0E0 /* MetalCPP.cpp in Sources */,
+				2392F1172765F57E009AA012 /* metal-cpp.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,7 +8,7 @@
 
 #pragma once
 
-#include "official/metal/MetalCPP.h"
+#include "metal/official/metal-cpp.h"
 
 struct MetalDraw
 {
