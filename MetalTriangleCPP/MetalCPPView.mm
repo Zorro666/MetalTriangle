@@ -52,6 +52,7 @@
   id<CAMetalDrawable> drawable = [metalLayer nextDrawable];
   CA::MetalDrawable *pMetalCppDrawable  = (__bridge CA::MetalDrawable*)drawable;
   metalDraw->Draw(pMetalCppDrawable);
+  [drawable release];
 }
 
 @end

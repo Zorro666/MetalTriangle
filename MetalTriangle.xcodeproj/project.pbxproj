@@ -87,8 +87,9 @@
 				2392F1152765F57E009AA012 /* metal-cpp.h */,
 				2392F1132765F57E009AA012 /* README.md */,
 			);
-			path = official;
-			sourceTree = "<group>";
+			name = official;
+			path = MetalTriangleCPP/metal/official;
+			sourceTree = SOURCE_ROOT;
 		};
 		23C983042761E72A00D5E0E0 /* MetalTriangleCPP */ = {
 			isa = PBXGroup;
@@ -203,7 +204,7 @@
 			isa = PBXProject;
 			attributes = {
 				DefaultBuildSystemTypeForWorkspace = Latest;
-				LastUpgradeCheck = 1310;
+				LastUpgradeCheck = 1320;
 				ORGANIZATIONNAME = Apple;
 				TargetAttributes = {
 					23C983022761E72A00D5E0E0 = {

@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "83E9F98521ED168D00B393C1"
-               BuildableName = "MetalTriangle.app"
-               BlueprintName = "MetalTriangle"
+               BlueprintIdentifier = "23C983022761E72A00D5E0E0"
+               BuildableName = "MetalTriangleCPP.app"
+               BlueprintName = "MetalTriangleCPP"
                ReferencedContainer = "container:MetalTriangle.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -34,7 +34,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      enableASanStackUseAfterReturn = "YES"
       disableMainThreadChecker = "YES"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
@@ -52,9 +51,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "83E9F98521ED168D00B393C1"
-            BuildableName = "MetalTriangle.app"
-            BlueprintName = "MetalTriangle"
+            BlueprintIdentifier = "23C983022761E72A00D5E0E0"
+            BuildableName = "MetalTriangleCPP.app"
+            BlueprintName = "MetalTriangleCPP"
             ReferencedContainer = "container:MetalTriangle.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -69,9 +68,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "83E9F98521ED168D00B393C1"
-            BuildableName = "MetalTriangle.app"
-            BlueprintName = "MetalTriangle"
+            BlueprintIdentifier = "23C983022761E72A00D5E0E0"
+            BuildableName = "MetalTriangleCPP.app"
+            BlueprintName = "MetalTriangleCPP"
             ReferencedContainer = "container:MetalTriangle.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

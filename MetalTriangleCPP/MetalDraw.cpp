@@ -218,6 +218,7 @@ void MetalDraw::BuildPipeline(NS::String *defaultLibraryPath, NS::Data *defaultL
 
   tempString = nsString->init("fragment_main", NS::UTF8StringEncoding);
   MTL::Function *debugFragmentFunc = debugLibrary->newFunction(tempString);
+  tempString->release();
   if (!debugFragmentFunc)
   {
     fprintf(stderr, "Error finding shader function 'fragment_main'\n");
@@ -301,14 +302,16 @@ void MetalDraw::Draw(CA::MetalDrawable *pMetalDrawable)
   MTL::CommandBuffer *commandBuffer1 = commandQueue->commandBuffer();
 
   MTL::RenderCommandEncoder *commandEncoder1 = commandBuffer1->renderCommandEncoder(renderPass1);
+  renderPass1->release();
   commandEncoder1->setRenderPipelineState(pipeline);
   commandEncoder1->setVertexBuffer(positionBuffer, 0, 0);
   commandEncoder1->setVertexBuffer(colorBuffer, 0, 1);
   commandEncoder1->drawPrimitives(MTL::PrimitiveTypeTriangle, 0, 3, 1);
   commandEncoder1->endEncoding();
-  commandEncoder1->autorelease();
+  commandEncoder1->release();
 
   commandBuffer1->commit();
+  commandBuffer1->release();
   MTL::CommandBuffer *commandBuffer2 = commandQueue->commandBuffer();
   Debug_UBO *debug_UBO = (Debug_UBO*)debugUBOBuffer->contents();
   debug_UBO->constants.x = framebufferTexture->width();
@@ -324,6 +327,7 @@ void MetalDraw::Draw(CA::MetalDrawable *pMetalDrawable)
   colorAttachments2->object(0)->setStoreAction(MTL::StoreActionStore);
   colorAttachments2->object(0)->setLoadAction(MTL::LoadActionLoad);
   MTL::RenderCommandEncoder *commandEncoder2 = commandBuffer2->renderCommandEncoder(renderPass2);
+  renderPass2->release();
 
   MTL::Viewport viewport;
   viewport.originX = 0.0f;
@@ -339,7 +343,7 @@ void MetalDraw::Draw(CA::MetalDrawable *pMetalDrawable)
   commandEncoder2->setViewport(viewport);
   commandEncoder2->drawPrimitives(MTL::PrimitiveTypeTriangleStrip, 0, 4, 1);
   commandEncoder2->endEncoding();
-  commandEncoder2->autorelease();
+  commandEncoder2->release();
 
   commandBuffer2->presentDrawable(pMetalDrawable);
   static float jake = 0.0f;
@@ -347,6 +351,7 @@ void MetalDraw::Draw(CA::MetalDrawable *pMetalDrawable)
   jake = (jake > 1.0f) ? 0.0f : jake;
   debug_UBO->darkCol = simd_make_float4(jake, 0.0f, 0.0f, 1.0f);
   commandBuffer2->commit();
+  commandBuffer2->release();
 }
 
 void MetalDraw::CopyFrameBuffer(MTL::Texture *framebuffer)
