@@ -302,16 +302,13 @@ void MetalDraw::Draw(CA::MetalDrawable *pMetalDrawable)
   MTL::CommandBuffer *commandBuffer1 = commandQueue->commandBuffer();
 
   MTL::RenderCommandEncoder *commandEncoder1 = commandBuffer1->renderCommandEncoder(renderPass1);
-  renderPass1->release();
   commandEncoder1->setRenderPipelineState(pipeline);
   commandEncoder1->setVertexBuffer(positionBuffer, 0, 0);
   commandEncoder1->setVertexBuffer(colorBuffer, 0, 1);
   commandEncoder1->drawPrimitives(MTL::PrimitiveTypeTriangle, 0, 3, 1);
   commandEncoder1->endEncoding();
-  commandEncoder1->release();
 
   commandBuffer1->commit();
-  commandBuffer1->release();
   MTL::CommandBuffer *commandBuffer2 = commandQueue->commandBuffer();
   Debug_UBO *debug_UBO = (Debug_UBO*)debugUBOBuffer->contents();
   debug_UBO->constants.x = framebufferTexture->width();
@@ -327,7 +324,6 @@ void MetalDraw::Draw(CA::MetalDrawable *pMetalDrawable)
   colorAttachments2->object(0)->setStoreAction(MTL::StoreActionStore);
   colorAttachments2->object(0)->setLoadAction(MTL::LoadActionLoad);
   MTL::RenderCommandEncoder *commandEncoder2 = commandBuffer2->renderCommandEncoder(renderPass2);
-  renderPass2->release();
 
   MTL::Viewport viewport;
   viewport.originX = 0.0f;
@@ -343,7 +339,6 @@ void MetalDraw::Draw(CA::MetalDrawable *pMetalDrawable)
   commandEncoder2->setViewport(viewport);
   commandEncoder2->drawPrimitives(MTL::PrimitiveTypeTriangleStrip, 0, 4, 1);
   commandEncoder2->endEncoding();
-  commandEncoder2->release();
 
   commandBuffer2->presentDrawable(pMetalDrawable);
   static float jake = 0.0f;
@@ -351,49 +346,38 @@ void MetalDraw::Draw(CA::MetalDrawable *pMetalDrawable)
   jake = (jake > 1.0f) ? 0.0f : jake;
   debug_UBO->darkCol = simd_make_float4(jake, 0.0f, 0.0f, 1.0f);
   commandBuffer2->commit();
-  commandBuffer2->release();
 }
 
 void MetalDraw::CopyFrameBuffer(MTL::Texture *framebuffer)
 {
-  /*
-  id<MTLCommandBuffer> commandBuffer = [commandQueue commandBuffer];
-  id<MTLBlitCommandEncoder> blitEncoder = [commandBuffer blitCommandEncoder];
+  MTL::CommandBuffer *commandBuffer = commandQueue->commandBuffer();
+  MTL::BlitCommandEncoder *blitEncoder = commandBuffer->blitCommandEncoder();
 
-  NSUInteger sourceWidth = framebuffer.width;
-  NSUInteger sourceHeight = framebuffer.height;
-  MTLOrigin sourceOrigin = MTLOriginMake(0,0,0);
-  MTLSize sourceSize = MTLSizeMake(sourceWidth, sourceHeight, 1);
+  NS::UInteger sourceWidth = framebuffer->width();
+  NS::UInteger sourceHeight = framebuffer->height();
+  MTL::Origin sourceOrigin(0,0,0);
+  MTL::Size sourceSize(sourceWidth, sourceHeight, 1);
 
-  NSUInteger bytesPerPixel = 4;
-  NSUInteger bytesPerRow   = sourceWidth * bytesPerPixel;
-  NSUInteger bytesPerImage = sourceHeight * bytesPerRow;
+  NS::UInteger bytesPerPixel = 4;
+  NS::UInteger bytesPerRow   = sourceWidth * bytesPerPixel;
+  NS::UInteger bytesPerImage = sourceHeight * bytesPerRow;
 
-  id<MTLBuffer> cpuPixelBuffer = [self->device newBufferWithLength:bytesPerImage options:MTLResourceStorageModeShared];
+  MTL::Buffer *cpuPixelBuffer = device->newBuffer(bytesPerImage, MTL::ResourceStorageModeShared);
 
-  [blitEncoder copyFromTexture:framebuffer
-                   sourceSlice:0
-                   sourceLevel:0
-                  sourceOrigin:sourceOrigin
-                    sourceSize:sourceSize
-                      toBuffer:cpuPixelBuffer
-             destinationOffset:0
-        destinationBytesPerRow:bytesPerRow
-      destinationBytesPerImage:bytesPerImage];
-  [blitEncoder endEncoding];
+  blitEncoder->copyFromTexture(framebuffer, 0, 0, sourceOrigin, sourceSize, cpuPixelBuffer, 0, bytesPerRow, bytesPerImage);
+  blitEncoder->endEncoding();
 
-  [commandBuffer commit];
-  [commandBuffer waitUntilCompleted];
+  commandBuffer->commit();
+  commandBuffer->waitUntilCompleted();
   static int jake = 0;
   if (jake % 1000 == 0)
   {
-    uint32_t *pixels = (uint32_t *)cpuPixelBuffer.contents;
-    NSLog(@"0x%X 0x%X 0x%X 0x%X\n", pixels[sourceWidth/2 + sourceHeight/2 * sourceWidth],
+    uint32_t *pixels = (uint32_t *)cpuPixelBuffer->contents();
+    printf("0x%X 0x%X 0x%X 0x%X\n", pixels[sourceWidth/2 + sourceHeight/2 * sourceWidth],
           pixels[sourceWidth/2 + sourceHeight*2/3 * sourceWidth],
           pixels[sourceWidth*3/5 + sourceHeight/2 * sourceWidth],
           pixels[sourceWidth/2 + sourceHeight/3 * sourceWidth]);
-    [cpuPixelBuffer release];
+    cpuPixelBuffer->release();
   }
   ++jake;
-  */
 }
