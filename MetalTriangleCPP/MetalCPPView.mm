@@ -52,7 +52,9 @@
   id<CAMetalDrawable> drawable = [metalLayer nextDrawable];
   CA::MetalDrawable *pMetalCppDrawable  = (__bridge CA::MetalDrawable*)drawable;
   metalDraw->Draw(pMetalCppDrawable);
-  [drawable release];
+  [NSThread sleepForTimeInterval:500.0/1000.0];
+  printf("JAKE IS HERE %lu\n", (unsigned long)[drawable retainCount]);
+  [drawable autorelease];
 }
 
 @end

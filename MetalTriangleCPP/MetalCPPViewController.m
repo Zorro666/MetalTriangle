@@ -9,8 +9,6 @@ typedef struct
 
 @implementation MetalCPPViewController
 {
-  CVDisplayLinkRef _displayLink;
-  NSTimer *_timer;
   ViewData viewData;
 }
 
@@ -24,16 +22,16 @@ typedef struct
 
   [metalView loaded];
 
-  _timer = [NSTimer scheduledTimerWithTimeInterval: 0.2
+  [NSTimer scheduledTimerWithTimeInterval: 0.2
                                             target: self
                                           selector: @selector(onTick:)
                                           userInfo: self
                                            repeats: YES];
 
-  CVDisplayLinkCreateWithActiveCGDisplays(&_displayLink);
-  CVDisplayLinkSetOutputCallback(_displayLink, &DisplayLinkCallback, (void *)(&self->viewData));
-  CVDisplayLinkStart(_displayLink);
-
+  CVDisplayLinkRef displayLink;
+  CVDisplayLinkCreateWithActiveCGDisplays(&displayLink);
+  CVDisplayLinkSetOutputCallback(displayLink, &DisplayLinkCallback, (void *)(&self->viewData));
+  CVDisplayLinkStart(displayLink);
 }
 
 -(void)viewWillDisappear
@@ -54,11 +52,14 @@ static CVReturn DisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTimeSt
                                     CVOptionFlags flagsIn, CVOptionFlags *flagsOut, void *target) {
   ViewData *viewData = (ViewData*)target;
   MetalCPPView *view = viewData->view;
-  [view draw];
   if (viewData->quit)
   {
     CVDisplayLinkStop(displayLink);
     CVDisplayLinkRelease(displayLink);
+  }
+  else
+  {
+    [view draw];
   }
   return kCVReturnSuccess;
 }
