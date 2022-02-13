@@ -52,10 +52,13 @@ typedef struct
 
 static CVReturn DisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTimeStamp* now,
                                     const CVTimeStamp* outputTime,
-                                    CVOptionFlags flagsIn, CVOptionFlags* flagsOut, void* target) {
+                                    CVOptionFlags flagsIn, CVOptionFlags* flagsOut, void* target)
+{
   ViewData *viewData = (ViewData*)target;
   MetalView* view = viewData->view;
+  @autoreleasepool {
   [view draw];
+  }
   if (viewData->quit)
   {
     CVDisplayLinkStop(displayLink);

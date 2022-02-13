@@ -295,10 +295,8 @@ fragment float4 fragment_main(constant Debug_UBO& debug_UBO [[buffer(0)]],\n\
   [commandEncoder setVertexBuffer:colorBuffer offset:0 atIndex:1 ];
   [commandEncoder drawPrimitives:MTLPrimitiveTypeTriangle vertexStart:0 vertexCount:3 instanceCount:1];
   [commandEncoder endEncoding];
-  [commandEncoder release];
 
   [commandBuffer1 commit];
-  [commandBuffer1 release];
 
   id<MTLCommandBuffer> commandBuffer2 = [commandQueue commandBuffer];
   Debug_UBO* debug_UBO = debugUBOBuffer.contents;
@@ -328,7 +326,6 @@ fragment float4 fragment_main(constant Debug_UBO& debug_UBO [[buffer(0)]],\n\
   [commandEncoder setViewport:viewport];
   [commandEncoder drawPrimitives:MTLPrimitiveTypeTriangleStrip vertexStart:0 vertexCount:4 instanceCount:1];
   [commandEncoder endEncoding];
-  [commandEncoder release];
 
   [commandBuffer2 presentDrawable:drawable];
   static float jake = 0.0f;
@@ -336,7 +333,6 @@ fragment float4 fragment_main(constant Debug_UBO& debug_UBO [[buffer(0)]],\n\
   jake = (jake > 1.0f) ? 0.0f : jake;
   debug_UBO->darkCol = simd_make_float4(jake, 0.0f, 0.0f, 1.0f);
   [commandBuffer2 commit];
-  [commandBuffer2 release];
 }
 
 -(void)copyFrameBuffer:(id<MTLTexture>)framebuffer
