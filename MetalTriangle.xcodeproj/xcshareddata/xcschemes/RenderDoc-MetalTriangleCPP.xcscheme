@@ -46,7 +46,6 @@
       enableGPUValidationMode = "1"
       allowLocationSimulation = "NO"
       viewDebuggingEnabled = "No"
-      queueDebuggingEnabled = "No"
       GPUProfilerEnabled = "No">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
@@ -62,7 +61,7 @@
          <EnvironmentVariable
             key = "DYLD_INSERT_LIBRARIES"
             value = "/Users/jake/Workspace/personal/rd3/build-xcode-Debug/lib/librenderdoc.dylib"
-            isEnabled = "NO">
+            isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>
    </LaunchAction>
