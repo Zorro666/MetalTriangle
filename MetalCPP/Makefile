@@ -27,8 +27,9 @@ all: build/metalcpp-triangle
 .PHONY: all
 
 build/metalcpp-triangle: $(METALCPP_TRIANGLE_OBJS) Makefile
+	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) $(LDFLAGS) $(METALCPP_TRIANGLE_OBJS) -o $@
 
 clean:
-	rm -f $(METALCPP_TRIANGLE_OBJS) \
-		build/metalcpp-triangle \
+	@rm -f $(METALCPP_TRIANGLE_OBJS)
+	@rm -rf build
